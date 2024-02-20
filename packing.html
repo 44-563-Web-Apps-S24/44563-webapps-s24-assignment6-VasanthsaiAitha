@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>My Packing</title>
+ </head>
+<body>
+<h1>Vasanth Sai packs for a trip</h1>
+
+<form>
+    <input type="checkbox" id="Pack_light" value="True">
+    <label for="Pack_light"> Pack light</label>
+    <br>
+    <input type="checkbox" id="Carry_on" value="True">
+    <label for="Carry_on">Carry on</label>
+    <br>
+    <input type="checkbox" id="Tablet" value="False">
+    <label for="Tablet">Tablet</label>
+    <br>
+    <button type="button" onclick="selectPack()">Select for packing</button>
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+    var my_pack ={};
+    function selectPack() 
+    {
+        my_pack = {};
+        var firstLight = document.getElementById("Pack_light").checked;
+        var secondLight = document.getElementById("Carry_on").checked;
+        var thirdLight = document.getElementById("Tablet").checked;
+        my_pack.light = firstLight;
+        my_pack.carry = secondLight;
+        my_pack.tablet = thirdLight;
+        document.getElementById('result').innerHTML = "Result: " + JSON.stringify(my_pack);
+    }
+</script>
+
+</body>
+</html>
