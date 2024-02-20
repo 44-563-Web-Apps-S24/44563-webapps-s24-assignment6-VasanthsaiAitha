@@ -21,6 +21,19 @@
 
 <p id="result">This text will be replaced </p>
 
+<form>
+    <label for="Month">Enter travel month</label>
+    <input type="text" id="Month" value="May"> 
+    <br>
+    <br>
+    <label for="Price">Enter price</label>
+    <input type="text" id="Price"> 
+    <br>
+    <br>
+    <button type="button" onclick="updatePack()">Update the pack</button>
+</form>
+
+<p id="priceresult">This text will be replaced </p>
 <script> 
     var my_pack ={};
     function selectPack() 
@@ -33,6 +46,13 @@
         my_pack.carry = secondLight;
         my_pack.tablet = thirdLight;
         document.getElementById('result').innerHTML = "Result: " + JSON.stringify(my_pack);
+    }
+    function updatePack()
+    {
+        var monthInput = document.getElementById("Month").value;
+        var PriceInput = document.getElementById("Price").value;
+        my_pack[monthInput] = PriceInput;
+        document.getElementById('priceresult').innerHTML = "Result: " + JSON.stringify(my_pack);
     }
 </script>
 
