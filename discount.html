@@ -24,12 +24,7 @@
     <p id="result"></p>
 <hr>
     <form id="calculatorForm">
-        <input type="number" id="myprice" placeholder="Enter price">
-        <br>
-        <br>
-        <input type="number" id="mydiscount" placeholder="Enter discount">
-        <br>
-        <br>
+
         <label>Sum</label>
         <input type="radio" name="operation" value="sum" onclick="chooseOp ()">
         <br>
@@ -62,8 +57,8 @@
     }
     function chooseOp() 
     {
-        var price = parseFloat(document.getElementById('myprice').value);
-        var discount = parseFloat(document.getElementById('mydiscount').value);
+        var price = parseFloat(document.getElementById('Price').value);
+        var discount = parseFloat(document.getElementById('discount').value);
         var operation = document.querySelector('input[name="operation"]:checked').value;
         var resultText;
         switch (operation)
